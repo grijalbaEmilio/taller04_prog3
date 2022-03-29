@@ -1,0 +1,66 @@
+POST http://localhost:3000/api/v1/series/serie HTTP/1.1
+content-Type : application/json
+
+{
+"serie": "Dexter",
+"number_seasons": 2,
+"original_lenguage": "Inglés",
+  "features_seasons": [{
+    "season_number": 1,
+    "season_name": "Temporada uno",
+    "premier_date": "2000-02-12",
+    "cast": ["Actor1", "Actor2"],
+    "episodes": [{
+      "episode_name": "uno",
+      "time_duration": 22
+    },
+    {
+      "episode_name": "dos",
+      "time_duration": 22
+    }]
+  }]
+}
+
+###
+GET http://localhost:3000/api/v1/series HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/v1/series/62433b19d9394b64a18b27c7 HTTP/1.1
+
+
+###
+
+DELETE http://localhost:3000/api/v1/series/62433b19d9394b64a18b27c7 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/v1/series/62433fa55101358629862869  HTTP/1.1
+content-Type : application/json
+
+{
+"serie": "Expediente X",
+"number_seasons": 2,
+"original_lenguage": "Inglés",
+  "features_seasons": [{
+    "season_number": 1,
+    "season_name": "Temporada uno",
+    "premier_date": "2000-02-12",
+    "cast": ["Actor1", "Actor2"],
+    "episodes": [{
+      "episode_name": "uno",
+      "time_duration": 22
+    },
+    {
+      "episode_name": "dos",
+      "time_duration": 22
+    }]
+  }]
+}
+
+###
+//lista series si el actor participa en en ella
+GET http://localhost:3000/api/v1/series/actor/Actor1 HTTP/1.1
+
+###
+//lista series si el actor participa en en ella
+GET http://localhost:3000/api/v1/series/premier/2000-02-12 HTTP/1.1

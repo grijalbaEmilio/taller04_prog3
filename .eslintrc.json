@@ -1,0 +1,14 @@
+{
+    "parseOptions":{
+        "ecamaVersion": 2018
+    },
+    "extends":["eslint: recommended", "prettier"],
+    "env":{
+        "es6":true,
+        "node": true,
+        "jet":true
+    },
+    "rules":{
+        "no-console": "warn"
+    }
+}
