@@ -53,4 +53,4 @@ const serieSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('series', serieSchema)
+module.exports = mongoose.model('pruebas', serieSchema)

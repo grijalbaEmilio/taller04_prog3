@@ -2,7 +2,7 @@ POST http://localhost:3000/api/v1/series/serie HTTP/1.1
 content-Type : application/json
 
 {
-"serie": "Dexter",
+"serie": "serieTres",
 "number_seasons": 2,
 "original_lenguage": "Inglés",
   "features_seasons": [{
@@ -64,3 +64,7 @@ GET http://localhost:3000/api/v1/series/actor/Actor1 HTTP/1.1
 ###
 //lista series si el actor participa en en ella
 GET http://localhost:3000/api/v1/series/premier/2000-02-12 HTTP/1.1
+
+
+###
+GET http://localhost:3000/api/v1/sendGrid HTTP/1.1

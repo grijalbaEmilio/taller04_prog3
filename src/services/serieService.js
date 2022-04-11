@@ -1,4 +1,5 @@
 const serieSchema = require('../models/series')
+const Boom = require("@hapi/boom");
 
 class serieService{
 
@@ -6,13 +7,18 @@ class serieService{
     const respuesta = serie.save()
     return serie
   }
-
+ 
   listSeries(){
     return serieSchema.find()
   }
 
   async listOne(id){
-    return serieSchema.findById({_id: id}).catch(error => console.log('serie no encontrada'))
+    return serieSchema.findById({_id: id}).then(data => {
+      if(!data){
+        throw Boom.notFound('No se encontró la serie')
+      }
+      return data
+    })
   }
 
   async removeOne(id){
@@ -43,13 +49,12 @@ async listforNameActor(name){
         })
       })
     }) 
-
     let result = filtradas.filter((item,index)=>{
       return filtradas.indexOf(item) === index;
     })
-
     return result
   }
+
 
   //según la fecha de estreno de una tempoprada
   async listforDatePremier(date){
